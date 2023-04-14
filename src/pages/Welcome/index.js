@@ -28,8 +28,8 @@ export default function Welcome (){
             />
         </View>
 
-          <Text style={styles.login}>E-mail</Text>
-          <Text style={styles.password}>Password</Text>
+          {/* <Text style={styles.login}>E-mail</Text>
+          <Text style={styles.password}>Password</Text> */}
 
           <TouchableOpacity style={styles.button}
             onPress={() => navigation.navigate('SignIn')}
