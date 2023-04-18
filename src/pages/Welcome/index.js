@@ -9,7 +9,8 @@ import { View,
  import * as Animatable from 'react-native-animatable'
 
  import { useNavigation } from '@react-navigation/native'
- 
+
+ import { Feather } from '@expo/vector-icons';
 
 export default function Welcome (){
     const navigation = useNavigation();
@@ -35,19 +36,17 @@ export default function Welcome (){
             >
            <Text style={styles.buttonText}> Log in </Text>
            </TouchableOpacity>
-
-          
-            <TextInput style={styles.textInput}> 
-            <Text> email@example.com </Text>
+           
+           <View  style={styles.textInput}>
+            <Feather name="mail" size={20} color="gray" style={{ marginLeft: 10, flex: 1 }} />
+            <TextInput style={styles.placeholder} placeholder="email@example.com"> 
             </TextInput>
-
+            </View>
+            
             <TextInput style={styles.textInputInput}>
+            <Feather name="lock" size={20} color="gray" />
             <Text> ********* </Text>
             </TextInput>
-
-            {/* <Checkbox.Root>
-            <Checkbox.Indicator />
-            </Checkbox.Root> */}
 
             <Text style={styles.checkbox}>Remember me for 30 days.</Text>
 
@@ -87,6 +86,11 @@ const styles = StyleSheet.create({
         bottom: '6%',
         alignItems: 'center',
     },
+    placeholder:{
+        flex: 10,
+        fontSize: 20,
+        textAlign: 'center',               
+    },
     password: {
         fontSize: 10,
         paddingLeft: '12.5%',
@@ -98,18 +102,20 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     textInput: {
-        color: '#D9D9D9',
-        backgroundColor: 'white',
+        flexDirection: 'row',
+        backgroundColor: '#D9D9D9',
         borderRadius: 4,
-        paddingVertical: 12,
+        paddingVertical: 7,
         width: '75%',
+        height: '5%',
         alignSelf: 'center',
         bottom: '10%',
         alignItems: 'center',
+        justifyContent: 'center',
     },
     textInputInput: {
-        color: '#D9D9D9',
-        backgroundColor: 'white',
+        color: '#808080',
+        backgroundColor: '#D9D9D9',
         borderRadius: 4,
         paddingVertical: 12,
         width: '75%',

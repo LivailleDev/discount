@@ -5,16 +5,14 @@ import CardItem from '../../components/Carditem/index'
 
 export default function Cart(){
   const { cart, addItemCart, removeItemCart, total } = useContext(CartContext);
-
-
-
+  
   return(
-    <View style={stlyes.container}>
+    <View style={styles.container}>
       <FlatList
         data={cart}
         showsVerticalScrollIndicator={false}
         keyExtractor={ (item) => String(item.id) }
-        ListEmptyComponent={ () => <Text>Nenhum item no carrinho...</Text>}
+        ListEmptyComponent={ () => <Text>No items...</Text>}
         renderItem={ ({ item }) => (
           <CardItem
             data={item}
@@ -22,13 +20,13 @@ export default function Cart(){
             removeAmount={ () => removeItemCart(item) }
           />
         )}
-        ListFooterComponent={ () => <Text style={stlyes.total}>Total: R$ {total}</Text> }
+        ListFooterComponent={ () => <Text style={styles.total}>Checkout: € {total}</Text> }
       />
     </View>
   )
 }
 
-const stlyes = StyleSheet.create({
+const styles = StyleSheet.create({
   container:{
     flex:1,
     backgroundColor: '#FAFAFA',

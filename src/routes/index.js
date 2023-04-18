@@ -13,7 +13,7 @@ export default function Routes(){
         name="Welcome"
         component={Welcome}
       />
-      
+
       <Stack.Screen
         name="Home"
         component={Home}
@@ -26,9 +26,10 @@ export default function Routes(){
         name="Cart"
         component={Cart}
         options={{
-          headerTitle: 'Meu Carrinho'
+          headerTitle: 'My Cart'
         }}
       />
     </Stack.Navigator>
   )
 }
+ 

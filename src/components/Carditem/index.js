@@ -26,7 +26,7 @@ export default function CardItem({ data, addAmount, removeAmount}) {
    <View style={styles.container}>
     <View>
       <Text style={styles.title}>{data.name}</Text>
-      <Text style={styles.price}>R$ {data.price}</Text>
+      <Text style={styles.price}>€ {data.price}</Text>
     </View>
 
     <View style={styles.amountContainer}>

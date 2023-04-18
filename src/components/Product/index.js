@@ -3,14 +3,16 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 export default function Product({ data, addToCart}) {
  return (
    <View style={styles.container}>
+    
     <View>
       <Text style={styles.title}>{data.name}</Text>
-      <Text style={styles.price}>R$ {data.price}</Text>
+      <Text style={styles.price}>€{data.price}</Text>
     </View>
-
+   
     <TouchableOpacity style={styles.buttonAdd} onPress={addToCart}>
       <Text style={styles.buttonText}>+</Text>
     </TouchableOpacity>
+
    </View>
   );
 }
@@ -34,7 +36,7 @@ const styles = StyleSheet.create({
   buttonAdd:{
     paddingStart: 12,
     paddingEnd: 12,
-    backgroundColor: '#168fff',
+    backgroundColor: '#5E7572',
     paddingTop: 6,
     paddingBottom: 6,
     borderRadius: 2,
