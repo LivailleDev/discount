@@ -16,7 +16,9 @@ export default function Welcome (){
     const navigation = useNavigation();
 
     return(
-    <View style={styles.containerLogo}> 
+        <View style={styles.container}> 
+
+        <View style={styles.containerLogo}> 
       
         <View>
         <Animatable.Image
@@ -27,27 +29,36 @@ export default function Welcome (){
             />
         </View>
 
-          <Text style={styles.login}>E-mail</Text>
-          
-          <Text style={styles.password}>Password</Text>
+          <View style={styles.email}>
+          <Text >E-mail</Text>
+          </View>
 
+    
+          <View  style={styles.viewEmail}>
+          <Feather name="mail" size={20} color="#808080" style={{ marginLeft: 1, flex: 1 }} />
+          <TextInput style={styles.placeholderEmail} placeholder="email@example.com"> 
+          </TextInput>
+          </View>
+        
+
+          <View  style={styles.password}> 
+          <Text>Password</Text> 
+          </View>
+
+            <View style={styles.viewPassword}>
+            <Feather name="lock" size={20} color="#808080" style={{ marginLeft: 1 }}/>
+            <TextInput style={styles.placeholderPassword} placeholder="*********">    
+            </TextInput>
+            </View>
+
+
+          <View>
           <TouchableOpacity style={styles.button}
             onPress={() => navigation.navigate('Home')}
             >
            <Text style={styles.buttonText}> Log in </Text>
            </TouchableOpacity>
-           
-           <View  style={styles.textInput}>
-            <Feather name="mail" size={20} color="gray" style={{ marginLeft: 10, flex: 1 }} />
-            <TextInput style={styles.placeholder} placeholder="email@example.com"> 
-            </TextInput>
-            </View>
             
-            <TextInput style={styles.textInputInput}>
-            <Feather name="lock" size={20} color="gray" />
-            <Text> ********* </Text>
-            </TextInput>
-
             <Text style={styles.checkbox}>Remember me for 30 days.</Text>
 
             <TouchableOpacity style={styles.buttonRegister}>
@@ -55,12 +66,11 @@ export default function Welcome (){
             </TouchableOpacity>
 
             <TouchableOpacity>
-                <Text style={styles.textBottomBottom}> Sign up! </Text>
+                <Text style={styles.textButtonButton}> Sign up! </Text>
             </TouchableOpacity>
-          
-            <View style={styles.input}> 
-          
           </View>
+        
+        </View>
         </View>
     );
 }
@@ -68,70 +78,81 @@ export default function Welcome (){
 const styles = StyleSheet.create({
 
     containerLogo:{
-        flex: 1,
         backgroundColor: '#5E7572', 
+         bottom: 50,
     },
-    // groceries: {
-    //     flex: 1,
-    //     transform: [{rotate: '45deg'}],
-    //     left: -102,
-    //     bottom: -12,          
-    // },
-    login: {
+    container: {
+        flex: 1,
+        backgroundColor: '#5E7572',
+    },
+    email: {
+        backgroundColor: '#5E7572',
         fontSize: 10,
-        paddingLeft: '12.5%',
-        color: '#D9D9D9',
-        width: '100%',
-        alignSelf: 'center',
-        bottom: '6%',
-        alignItems: 'center',
-    },
-    placeholder:{
-        flex: 10,
-        fontSize: 20,
-        textAlign: 'center',               
-    },
-    password: {
-        fontSize: 10,
-        paddingLeft: '12.5%',
-        color: '#D9D9D9',
-        width: '100%',
-        alignSelf: 'center',
+        paddingLeft: '1.5%',
+        width: '20%',
+        left: '12%',
         bottom: '5%',
-        top:'0.7%',
-        alignItems: 'center',
+        display: 'block',
+        position: 'relative',
     },
-    textInput: {
+    viewEmail: {
+        paddingLeft: '2.5%',
+        backgroundColor: '#D9D9D9',
         flexDirection: 'row',
-        backgroundColor: '#D9D9D9',
-        borderRadius: 4,
-        paddingVertical: 7,
-        width: '75%',
-        height: '5%',
-        alignSelf: 'center',
-        bottom: '10%',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    textInputInput: {
         color: '#808080',
-        backgroundColor: '#D9D9D9',
         borderRadius: 4,
         paddingVertical: 12,
         width: '75%',
         alignSelf: 'center',
         bottom: '7%',
         alignItems: 'center',
+     },
+     placeholderEmail:{
+        color: 'red',
+        backgroundColor: '#D9D9D9',
+        right: '240%',
+        fontSize: 15,
+        width: '75%',
     },
-    button:{
+    password: {
+        backgroundColor: '#5E7572',
+        color: 'blue',
+        fontSize: 15,
+        paddingLeft: '1.5%',
+        width: '20%',
+        left: '12%',
+        bottom: '4%',
+        display: 'block',
+        position: 'relative',
+    },
+    viewPassword: {
+        backgroundColor: '#D9D9D9',
+        paddingLeft: '2.5%',
+        color: '#808080',
+        flexDirection: 'row',
+        borderRadius: 4,
+        paddingVertical: 12,
+        width: '75%',
+        alignSelf: 'center',
+        bottom: '5.5%',
+        alignItems: 'center',
+    },
+    placeholderPassword: {
+        backgroundColor: '#D9D9D9',
+        fontSize: 20,
+        width: '75%',
+        top: '1%',
+        paddingLeft: '3%',
+    },
+    button: {
         color: '#D9D9D9',
         backgroundColor: '#A3AF8D',
         borderRadius: 4,
         paddingVertical: 4,
         width: '75%',
         alignSelf: 'center',
-        bottom: '1%',
-        top: '8%',
+        bottom: '9%',
+        
         alignItems: 'center',
     },
     buttonText:{
@@ -141,17 +162,22 @@ const styles = StyleSheet.create({
     checkbox: {
         color: '#D9D9D9',
         paddingLeft: '20%',
+        bottom: '0%',
+        backgroundColor: '#5E7572',
     },
     registerText: {
-        paddingVertical: '5%',
-        left: '33%',
+        left: '30%',
         color: '#D9D9D9',
-        textDecorationLine: 'underline'
+        textDecorationLine: 'underline',
+        backgroundColor: '#5E7572',
+        top: '80%',
     },
-    textBottomBottom:{
+    textButtonButton:{
         color: '#D9D9D9',
         bottom: '1%',
-        left: '45%',
-        textDecorationLine: 'underline'
+        left: '40%',
+        textDecorationLine: 'underline',
+        backgroundColor: '#5E7572',
+        top: '100%',
     },
 })
